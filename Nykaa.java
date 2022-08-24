@@ -15,16 +15,16 @@ public static void main(String[] args) {
 	ChromeDriver drive=new ChromeDriver();
 	drive.get("https://www.nykaa.com/");
     drive.manage().window().maximize();
-    drive.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+    drive.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     WebElement brands = drive.findElement(By.xpath("(//a[@class='css-1mavm7h'])[2]"));
     Actions builder=new Actions(drive);
     builder.moveToElement(brands).perform();
     drive.findElement(By.xpath("//input[@id='brandSearchBox']")).sendKeys("L'Oreal Paris\r\n");
     drive.findElement(By.xpath("(//a[contains(text(),'Oreal Paris')])[1]")).click();
-    String text="Buy L'Oreal Paris products online at best price on Nykaa | Nykaa";
+    String text1="Buy L'Oreal Paris products online at best price on Nykaa | Nykaa";
     String text2=drive.getTitle();
     { 
-    	if(text.equals(text2))
+    	if(text1.equals(text2))
     		System.out.println("true");
     	else
     	{
