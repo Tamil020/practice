@@ -19,6 +19,8 @@ public class SnapDeal {
 		driver.findElement(By.xpath("//span[@class='linkTest'][1]")).click();
 		String shoes=driver.findElement(By.xpath("//span[contains(text(),'Items')]")).getText();
 		System.out.println("shoes count:"+shoes);
+		string title2=driver.getTitle();
+		system.out.println(title2);
 	}
 
 }
